@@ -13,7 +13,7 @@ const todoList = [
     completed: false,
     index: 2,
   },
-  { 
+  {
     description: 'task3',
     completed: false,
     index: 3,
