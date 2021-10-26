@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Mesi21/ToDo#readme",
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.4.0",
     "eslint": "^7.32.0",

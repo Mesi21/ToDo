@@ -1,6 +1,7 @@
 import './style.css';
 import createEle from './elements/createEle.js';
 import createTaskArea from './elements/createTaskArea.js';
+import '@fortawesome/fontawesome-free/js/all.js';
 
 const todoList = [
   {
@@ -28,6 +29,7 @@ const displayTasks = () => {
     const row = createEle('li', null, `task-${task.index}`, null);
     const label = createEle('label', null, null, task.description);
     const input = createEle('input', null, task.index, null);
+    console.log(input)
     const dots = createEle('div', `${task.completed === true ? 'trash' : 'dot'}`, `dot-${task.index}`, null);
     input.setAttribute('type', 'checkbox');
     input.setAttribute('value', task.description);
