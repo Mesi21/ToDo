@@ -19,6 +19,8 @@ To get a local copy up and running follow the next steps:
 > Clone the repo to you local machine.
 ```bash
     git clone "https://github.com/Mesi21/ToDo.git"
+    run `npm install`
+    run `npm start` to start the server
 ```
 ## Author
 
