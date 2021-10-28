@@ -98,6 +98,10 @@ li {
   padding: 0 20px;
 }
 
+#tasks-ed {
+  border: none;
+}
+
 .trash {
   background-image: url('img/trash.png');
   background-size: cover; 

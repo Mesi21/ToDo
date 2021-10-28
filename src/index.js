@@ -8,6 +8,8 @@ import createTaskArea from './elements/createTaskArea.js';
 import toggleCheck from './helpers/toggleCheck.js';
 import createTask from './functionalities/createTask.js'
 import editTask from './functionalities/editTask';
+import deleteTask from './functionalities/deleteTask.js';
+import updateIdx from './functionalities/updateIdx';
 
 class ToDo {
   constructor() {
@@ -35,8 +37,19 @@ class ToDo {
     this.tasks.forEach((task) => {
       const row = createEle('li', 'tasks', `row-${task.index}`, null);
       const input = createEle('input', null, `task-${task.index}`, null);
-      const inputForEdit = createEle('input', null, `inp-${task.index}`, null);
+      const inputForEdit = createEle('input', 'tasks-ed', `inp-${task.index}`, null);
       const dots = createEle('div', `${task.completed === true ? 'trash' : 'dot'}`, `dot-${task.index}`, null);
+      dots.addEventListener('mouseover', () => {
+        dots.setAttribute('class', 'trash');
+        dots.addEventListener('click', () => {
+          this.tasks = deleteTask(this.tasks, task);
+          console.log(this.tasks);
+          console.log(task); 
+          updateIdx(this.tasks);
+          this.localSave();
+          window.location.reload();
+        });
+      });
       input.setAttribute('type', 'checkbox');
       input.setAttribute('value', task.description);
       inputForEdit.setAttribute('value', task.description);
