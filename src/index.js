@@ -10,6 +10,7 @@ import createTask from './functionalities/createTask.js'
 import editTask from './functionalities/editTask';
 import deleteTask from './functionalities/deleteTask.js';
 import updateIdx from './functionalities/updateIdx';
+import clearAll from './functionalities/clearAll.js';
 
 class ToDo {
   constructor() {
@@ -43,8 +44,6 @@ class ToDo {
         dots.setAttribute('class', 'trash');
         dots.addEventListener('click', () => {
           this.tasks = deleteTask(this.tasks, task);
-          console.log(this.tasks);
-          console.log(task); 
           updateIdx(this.tasks);
           this.localSave();
           window.location.reload();
@@ -78,6 +77,11 @@ class ToDo {
       window.location.reload();
     });
     clearAllFinished.setAttribute('id', 'clear');
+    clearAllFinished.addEventListener('click', () => {
+      this.tasks = clearAll(this.tasks);
+      this.localSave();
+      window.location.reload();
+    });
     mainArea.appendChild(list);
     mainArea.appendChild(clearAllFinished);
     return mainArea;

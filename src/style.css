@@ -18,6 +18,10 @@ li {
   padding: 0;
 }
 
+input {
+  border: none;
+}
+
 #main {
   width: 80%;
   margin: 100px auto;
