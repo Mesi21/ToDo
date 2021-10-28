@@ -7,6 +7,7 @@ import createEle from './elements/createEle.js';
 import createTaskArea from './elements/createTaskArea.js';
 import toggleCheck from './helpers/toggleCheck.js';
 import createTask from './functionalities/createTask.js'
+import editTask from './functionalities/editTask';
 
 class ToDo {
   constructor() {
@@ -32,14 +33,19 @@ class ToDo {
     const list = createEle('ul', 'todos', 'list-todos', null);
     const clearAllFinished = createEle('div', null, 'clear', 'Clear all completed');
     this.tasks.forEach((task) => {
-      const row = createEle('li', 'tasks', null, null);
+      const row = createEle('li', 'tasks', `row-${task.index}`, null);
       const input = createEle('input', null, `task-${task.index}`, null);
-      const label = createEle('label', null, null, null)
+      const inputForEdit = createEle('input', null, `inp-${task.index}`, null);
       const dots = createEle('div', `${task.completed === true ? 'trash' : 'dot'}`, `dot-${task.index}`, null);
       input.setAttribute('type', 'checkbox');
       input.setAttribute('value', task.description);
-      label.setAttribute('for', `task-${task.index}`);
-      label.innerHTML = task.description;
+      inputForEdit.setAttribute('value', task.description);
+      inputForEdit.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          inputForEdit.setAttribute('value', editTask(inputForEdit.value, task));
+          this.localSave();
+        };
+      });
       input.checked = task.completed;
       input.addEventListener('change', () => {
         toggleCheck(input, task);
@@ -47,7 +53,7 @@ class ToDo {
         window.location.reload();
       });
       row.appendChild(input);
-      row.appendChild(label);
+      row.appendChild(inputForEdit);
       row.appendChild(dots);
       list.appendChild(row);
       this.localSave();
