@@ -6,7 +6,7 @@ import '@fortawesome/fontawesome-free/js/brands';
 import createEle from './elements/createEle.js';
 import createTaskArea from './elements/createTaskArea.js';
 import toggleCheck from './helpers/toggleCheck.js';
-import createTask from './functionalities/createTask.js'
+import createTask from './functionalities/createTask.js';
 import editTask from './functionalities/editTask';
 import deleteTask from './functionalities/deleteTask.js';
 import updateIdx from './functionalities/updateIdx';
@@ -56,7 +56,7 @@ class ToDo {
         if (e.key === 'Enter') {
           inputForEdit.setAttribute('value', editTask(inputForEdit.value, task));
           this.localSave();
-        };
+        }
       });
       input.checked = task.completed;
       input.addEventListener('change', () => {
