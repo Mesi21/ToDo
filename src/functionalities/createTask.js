@@ -8,6 +8,6 @@ const createTask = (tasks, currT) => {
   newTask.index = tasks.length;
   tasks.push(newTask);
   return newTask;
-}
+};
 
 export default createTask;
