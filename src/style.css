@@ -98,6 +98,21 @@ li {
   padding: 0 20px;
 }
 
+.trash {
+  background-image: url('img/trash.png');
+  background-size: cover; 
+  height: 20px;
+  width: 20px;
+}
+
+.dot {
+  background-image: url('img/more.png');
+  background-size: cover; 
+  height: 20px;
+  width: 20px;
+}
+
+
 #clear {
   height: 60px;
   display: flex;
