@@ -7,7 +7,7 @@ const createTaskArea = () => {
   const add = createEle('div', null, 'add-new', null);
   const addNewTodo = createEle('input', null, 'to-add', null, null);
   const newBtn = createEle('button', 'addTasks', 'add', null);
-  newBtn.innerHTML = '<i class="fas fa-sync" aria-hidden="true"></i>';
+  newBtn.innerHTML = '<i class="fas fa-sign-in-alt" aria-hidden="true"></i>';
   addNewTodo.setAttribute('type', 'text');
   addNewTodo.setAttribute('placeholder', 'Add to your list');
   newBtn.setAttribute('type', 'submit');
