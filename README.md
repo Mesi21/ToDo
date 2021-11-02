@@ -3,7 +3,7 @@
 This project is about an app used for adding, editing and deleting daily tasks. The user can also flag a task as completed. The page was built using JavaScript and bundled with Webpack.
 
 - - - -
-![screenshot](app/assets/img/todo.jpg)
+![screenshot](./src/img/todo.jpg)
 
 
 # Built With
