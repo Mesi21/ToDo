@@ -14,7 +14,7 @@ This project is about an app used for adding, editing and deleting daily tasks. 
 * CSS
 
 # Live Demo
-[ToDo](https://mesi21.github.io/ToDo/) 
+[ToDo App](https://mesi21.github.io/ToDo/) 
 
 # Getting Started
 
