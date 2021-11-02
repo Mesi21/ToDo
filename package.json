@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "This project is about an app used for adding, editing and deleting daily tasks. The user can also flag a task as completed. The page was built using JavaScript and bundled with Webpack.",
   "private": true,
+  "homepage": "https://mesi21.github.io/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --open",
-    "build": "webpack"
+    "build": "webpack", 
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -18,7 +20,6 @@
   "bugs": {
     "url": "https://github.com/Mesi21/ToDo/issues"
   },
-  "homepage": "https://github.com/Mesi21/ToDo#readme",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.4.0",
