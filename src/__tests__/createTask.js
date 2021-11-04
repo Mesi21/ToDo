@@ -9,7 +9,7 @@ const { JSDOM } = jsdom;
 const dom = new JSDOM(`<!DOCTYPE html><div id="main"></div>`);
 const document = dom.window.document;
 
-describe('Test add and remove methods', () => {
+describe('Test add method', () => {
 
   it('adds a new task ', () => {
     const val = 'test task';
@@ -43,3 +43,12 @@ describe('Test add and remove methods', () => {
 });
 
 
+describe('Test remove method', () => {
+  it('delete a new task ', () => {
+    const task = tasks[1];
+    const newArray = deleteTask(tasks, task);
+    expect(newArray.length).toBe(4);
+  });
+
+
+})
