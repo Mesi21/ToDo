@@ -4,6 +4,7 @@ import deleteTask from '../functionalities/deleteTask.js';
 import tasks from '../__mocks__/createTask.js';
 import editTask from '../functionalities/editTask.js';
 import toggleCheck from '../helpers/toggleCheck.js';
+import clearAll from '../functionalities/clearAll.js';
 
 const jsdom = require('jsdom');
 
@@ -77,5 +78,23 @@ describe('Test completed status method', () => {
     changeInput.checked = true;
     toggleCheck(changeInput, tasks[1]);
     expect(tasks[1].completed).toBe(true);
+  })
+});
+
+describe('Test clear all completed tasks method', () => {
+  it('checks if completed tasks are removed', () => {
+    const main = document.querySelector('#main');
+    for (let j = 0; j < tasks.length; j += 1) {
+      const li = document.createElement('li');
+      const input = document.createElement('input');
+      input.setAttribute('type', 'checkbox');
+      li.appendChild(input);
+      main.appendChild(li);
+    }
+    const changeInput = document.getElementsByTagName('input')[3];
+    changeInput.checked = true;
+    toggleCheck(changeInput, tasks[3]);
+    clearAll(tasks);
+    expect(clearAll(tasks).length).toBe(3);
   })
 });

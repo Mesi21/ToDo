@@ -1,15 +1,15 @@
 import './style.css';
-import '@fortawesome/fontawesome-free/js/fontawesome';
-import '@fortawesome/fontawesome-free/js/solid';
-import '@fortawesome/fontawesome-free/js/regular';
-import '@fortawesome/fontawesome-free/js/brands';
+import '@fortawesome/fontawesome-free/js/fontawesome.js';
+import '@fortawesome/fontawesome-free/js/solid.js';
+import '@fortawesome/fontawesome-free/js/regular.js';
+import '@fortawesome/fontawesome-free/js/brands.js';
 import createEle from './elements/createEle.js';
 import createTaskArea from './elements/createTaskArea.js';
 import toggleCheck from './helpers/toggleCheck.js';
 import createTask from './functionalities/createTask.js';
-import editTask from './functionalities/editTask';
+import editTask from './functionalities/editTask.js';
 import deleteTask from './functionalities/deleteTask.js';
-import updateIdx from './functionalities/updateIdx';
+import updateIdx from './functionalities/updateIdx.js';
 import clearAll from './functionalities/clearAll.js';
 
 class ToDo {
