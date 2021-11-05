@@ -76,7 +76,6 @@ describe('Test completed status method', () => {
     const changeInput = document.getElementsByTagName('input')[1];
     changeInput.checked = true;
     toggleCheck(changeInput, tasks[1]);
-    console.log(tasks);
     expect(tasks[1].completed).toBe(true);
   })
 });
