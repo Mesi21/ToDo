@@ -3,6 +3,7 @@ import createTask from '../functionalities/createTask.js';
 import deleteTask from '../functionalities/deleteTask.js';
 import tasks from '../__mocks__/createTask.js';
 import editTask from '../functionalities/editTask.js';
+import toggleCheck from '../helpers/toggleCheck.js';
 
 const jsdom = require('jsdom');
 
@@ -60,4 +61,22 @@ describe('Test edit method', () => {
     editTask(inputField.value, tasks[1]);
     expect(tasks[1].description).toBe('New Task');
   });
+});
+
+describe('Test completed status method', () => {
+  it('checks if task status is updated', () => {
+    const main = document.querySelector('#main');
+    for (let j = 0; j < tasks.length; j += 1) {
+      const li = document.createElement('li');
+      const input = document.createElement('input');
+      input.setAttribute('type', 'checkbox');
+      li.appendChild(input);
+      main.appendChild(li);
+    }
+    const changeInput = document.getElementsByTagName('input')[1];
+    changeInput.checked = true;
+    toggleCheck(changeInput, tasks[1]);
+    console.log(tasks);
+    expect(tasks[1].completed).toBe(true);
+  })
 });
