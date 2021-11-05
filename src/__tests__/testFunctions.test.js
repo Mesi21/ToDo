@@ -2,6 +2,7 @@ import { jsxEmptyExpression } from '@babel/types'; // eslint-disable-line
 import createTask from '../functionalities/createTask.js';
 import deleteTask from '../functionalities/deleteTask.js';
 import tasks from '../__mocks__/createTask.js';
+import editTask from '../functionalities/editTask.js';
 
 const jsdom = require('jsdom');
 
@@ -46,5 +47,17 @@ describe('Test remove method', () => {
     const task = tasks[1];
     const newArray = deleteTask(tasks, task);
     expect(newArray.length).toBe(4);
+  });
+});
+
+
+describe('Test edit method', () => {
+  it('checks if the task description changes on input change', () => {
+    const main = document.querySelector('#main');
+    const inputField = document.createElement('input');
+    inputField.value = 'New Task';
+    main.appendChild(inputField);
+    editTask(inputField.value, tasks[1]);
+    expect(tasks[1].description).toBe('New Task');
   });
 });
