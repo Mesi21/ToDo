@@ -52,7 +52,6 @@ describe('Test remove method', () => {
   });
 });
 
-
 describe('Test edit method', () => {
   it('checks if the task description changes on input change', () => {
     const main = document.querySelector('#main');
@@ -78,7 +77,7 @@ describe('Test completed status method', () => {
     changeInput.checked = true;
     toggleCheck(changeInput, tasks[1]);
     expect(tasks[1].completed).toBe(true);
-  })
+  });
 });
 
 describe('Test clear all completed tasks method', () => {
@@ -96,5 +95,5 @@ describe('Test clear all completed tasks method', () => {
     toggleCheck(changeInput, tasks[3]);
     clearAll(tasks);
     expect(clearAll(tasks).length).toBe(3);
-  })
+  });
 });
