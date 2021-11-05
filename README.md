@@ -25,6 +25,15 @@ To get a local copy up and running follow the next steps:
     run `npm install`
     run `npm start` to start the server
 ```
+
+## Test
+
+```bash
+    git clone "https://github.com/Mesi21/ToDo.git"
+    run `npm install --save-dev`
+    run `npm run test` to start testing
+```
+
 ## Author
 
 #### :bust_in_silhouette: Molnar Emese 
