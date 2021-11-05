@@ -5,7 +5,7 @@ const createTask = (tasks, currT) => {
     index: 0,
   };
   newTask.description = currT;
-  newTask.index = tasks.length;
+  newTask.index = tasks.length + 1;
   tasks.push(newTask);
   return newTask;
 };
